@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hello Bulma!</title>
+    <link rel="stylesheet" href="{% static 'bulma-0.9.4.min.css' %}">
+  </head>
+  <body>
+  <section class="section">
+    <div class="container">
+      <h1 class="title">
+        Dictionary
+      </h1>
+      <p class="subtitle">
+        A Free Minimalist Dictionary for <strong>Everyone</strong>!
+      </p>
+      <p class="subtitle is-6">
+      All the data available here is taken from <strong></strong>, Source Code is available on <a class="is-link" href="https://github.com/lf32/dictionary" target="_blank">Github</a>.
+      </p>
+    </div>
+  </section>
+
+    <footer class="footer mx-auto" style=" bottom:0;">
+  <div class="content has-text-centered">
+    <p>
+      <strong>Free Dictionary</strong> by <a href="https://github.com/lf32">lf32</a>. The source code is licensed
+      <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website 
+      is built using <a class="is-link" href="https://djangoproject.com" target="_blank">Django</a> and <a class="is-link" href="https://bulma.io/" target="_blank">Bulma CSS</a>.. 
+    </p>
+  </div>
+</footer>
+
+  </body>
+</html>
