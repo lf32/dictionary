@@ -22,6 +22,59 @@
     </div>
   </section>
 
+  {% if search %}
+  <section class="section is-max-desktop">
+    <div class="container my-0">
+	    <form method="POST">
+		    {% csrf_token %}
+	<h2 class="subtitle is-3 is-block">Search Dictionary</h2>
+	<div class="columns mx-auto">	
+		<div class="column is-two-thirds">
+			{{ form.input_text }}
+		</div>
+		<div class="column is-one-thirds">
+		<input type="submit" class="button is-link is-fullwidth submit" value="Search">
+		</div>
+	</div>
+	    </form>
+    </div>
+  </section>
+  {% endif %}
+
+  {% if alpha %}
+  <section class="section">
+    <div class="container">
+	<h2 class="subtitle is-3 is-block">Search Dictionary By Letter</h2>
+	<div class="is-flex is-flex-wrap-wrap ">	
+	    {% for letter in alpha %}
+		<a class="title is-3 button mx-1 is-light is-info" href="{% url 'letter_view' letter=letter %}">{{ letter|capfirst }}</a>
+	    {% endfor %}
+	</div>
+    </div>
+  </section>
+  {% endif %}
+
+  {% if dictionary %}
+  <section class="section">
+    <div class="container">
+  {% for key in dictionary %}
+	<div class="card mb-2">
+  <header class="card-header">
+	  <p class="card-header-title">
+	  {{ key.0 }} {% if key.1 %} <span style="white-space: pre-wrap;"> ({{ key.1 }}) </span> {% endif %}
+    </p>
+  </header>
+  <div class="card-content">
+    <div class="content">
+	    {{ key.2 }}
+    </div>
+  </div>
+</div>
+  {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+
     <footer class="footer mx-auto" style=" bottom:0;">
   <div class="content has-text-centered">
     <p>
